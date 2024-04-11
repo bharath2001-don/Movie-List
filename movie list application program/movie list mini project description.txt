@@ -1,0 +1,466 @@
+# Movie Details Website
+
+A simple JavaScript web application to search for and display movie details.
+
+
+## Features
+
+- Enter a movie name and get details about the movie.
+- Uses the OMDB API to fetch movie data.
+- Responsive and user-friendly design.
+*Movie Details Website :
+
+*A simple JavaScript web application to search for and display movie details.
+
+*Features :
+1)Enter a movie name and get details about the movie.
+2)Uses the OMDB API to fetch movie data.
+3)Responsive and user-friendly design.
+
+Use belove movie names :
+
+1)Sita Ramam.
+2)OMG 2.
+3)Knives Out.
+4)Lagaan: Once Upon a Time in India.
+
+HTML :
+
+HTML Code :
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Movie Details</h1>
+        <input type="text" id="movieInput" placeholder="Enter a movie name">
+        <button id="searchButton">Search</button>
+        
+    </div>
+    <div id="movieDetails">
+        <!-- Movie details will be displayed here -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+HTML Description:
+
+<!DOCTYPE html>: Specifies the document type and version of HTML.
+<html lang="en">: The root element of the HTML document, with the language set to English.
+<head>: Contains meta-information about the document, such as character encoding, viewport settings, title, and links to external resources like stylesheets and scripts.
+<link>: Links to an external CSS stylesheet (style.css) hosted on Google Fonts to import the Poppins font family.
+<meta charset="UTF-8">: Specifies the character encoding of the document as UTF-8.
+<meta name="viewport" content="width=device-width, initial-scale=1.0">: Sets the viewport properties for responsive design.
+<title>Movie Details</title>: Sets the title of the webpage.
+<link rel="stylesheet" href="style.css">: Links to an external CSS file (style.css) for styling the webpage.
+<body>: Contains the content of the webpage visible to users.
+<div class="container">: A container for the main content of the webpage.
+<h1>Movie Details</h1>: Displays the heading "Movie Details".
+<input type="text" id="movieInput" placeholder="Enter a movie name">: An input field where users can enter a movie name.
+<button id="searchButton">Search</button>: A button to trigger the search for movie details.
+<div id="movieDetails">: A container where movie details will be displayed dynamically.
+<script src="script.js"></script>: Links to an external JavaScript file (script.js) for scripting functionalities.
+This HTML structure provides a framework for a simple movie details webpage, where users can input a movie name and retrieve its details dynamically. The actual functionality for searching and displaying movie details would be implemented using JavaScript in the linked script.js file.
+This HTML document serves as the foundation for a webpage dedicated to showcasing movie details. The interface allows users to input a movie name and retrieve its details dynamically. By integrating HTML for structure, CSS for styling, and JavaScript for interactivity, the webpage provides an engaging user experience.
+
+Structure:
+
+Document Type Declaration:
+
+Specifies HTML5 as the document type.
+HTML Root Element:
+
+<html lang="en">: Sets the language of the document to English.
+Head Section:
+
+Contains metadata and external resource links.
+Meta charset ensures proper character encoding (UTF-8).
+Meta viewport tag enables responsive design.
+Title element defines the title of the webpage.
+External stylesheet link imports custom styles from style.css.
+Body Section:
+
+Displays visible content for users.
+Container <div class="container"> holds the main content.
+Heading <h1> introduces the webpage as "Movie Details".
+Input field <input> enables users to enter a movie name.
+Button <button> initiates the movie search.
+Container <div id="movieDetails"> is designated for displaying dynamic movie details.
+External script link <script src="script.js"></script> imports JavaScript code for functionality.
+Functionality:
+
+Users input a movie name in the provided text field.
+Upon clicking the "Search" button, JavaScript fetches and displays movie details.
+The movie details dynamically populate within the <div id="movieDetails"> container, offering a seamless user experience without page reloads.
+Purpose:
+
+Facilitates easy access to movie information for users.
+Demonstrates modern web development practices by combining HTML, CSS, and JavaScript.
+Enhances user engagement through interactive features, promoting a more immersive browsing experience.
+
+CSS stylesheet :
+
+CSS Code :
+/* Reset some default styles */
+body, h1, p {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h2{
+    color:#ffffff;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+body {
+    /* font-family: Arial, sans-serif; */
+    background-color: #000000;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1aa0c9;
+    background-image: linear-gradient(to top left, rgb(1, 14, 19), rgb(30, 41, 163));
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+p{
+    color: #ffffff;
+}
+
+
+input[type="text"] {
+    font-family: 'Poppins', Arial, sans-serif;
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #032b34;
+    border-radius: 24px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+button {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #1db512;
+    color: #000000;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+#movieDetails {
+    margin-top: 20px;
+    margin: auto;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+h4{
+    color: #158631;
+}
+
+.float-container {
+    border: 1px solid rgb(255, 255, 255);
+  margin: 1rem;
+  padding: 2rem 2rem;
+  text-align: center;
+}
+
+.float-child {
+    display: inline-block;
+  /* border: 1px solid red; */
+  padding: 1rem 1rem;
+  vertical-align: middle;
+  text-align: left;
+}
+
+CSS Description:
+
+This CSS code provides styling rules for the movie details webpage, including resetting default styles and defining custom styles for various elements. Here's a breakdown of the CSS:
+
+Reset Default Styles:
+
+Resets default font styles and removes margins and padding for body, h1, and p elements.
+Custom Styles:
+
+h2: Defines styles for <h2> elements, setting text color and font family.
+body: Sets the background color to black and applies the Poppins font family.
+.container: Styles the main content container with maximum width, padding, background color, border radius, and box shadow. Also sets text alignment to center.
+h1: Styles the main heading with font size, weight, margin, and color.
+p: Sets the color for paragraph text.
+input[type="text"]: Styles the text input field with width, padding, border, border radius, font size, margin, color, and background color.
+button: Styles the button with background color, text color, border, border radius, padding, font size, and cursor.
+button:hover: Defines styles for the button on hover, changing background and text color.
+#movieDetails: Styles the container for movie details, setting margin and text alignment.
+img: Defines styles for images, ensuring maximum width, auto height, margin, border radius, and box shadow.
+h4: Sets styles for <h4> elements, defining text color.
+.float-container and .float-child: Styles for containers and child elements within a floating layout.
+
+The provided CSS code enhances the visual appearance of the movie details webpage and defines styles for various elements. Here's a description of the functionality and what each line does:
+
+1)Reset Default Styles:
+body, h1, p {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+*This section resets some default styles for body, <h1>, and <p> elements.
+*It sets the font family to 'Poppins' and removes any default margins and padding.
+2)Custom Styles:
+h2{
+    color:#ffffff;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+*This block defines styles for <h2> elements, setting the text color to white and using the 'Poppins' font family.
+
+*body {
+    background-color: #000000;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+*Styles the body element with a black background color and 'Poppins' font family.
+*.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1aa0c9;
+    background-image: linear-gradient(to top left, rgb(1, 14, 19), rgb(30, 41, 163));
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+*Styles the .container class, setting maximum width, margin, padding, background color, gradient background image, border radius, box shadow, and text alignment.
+
+*h1 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+*Styles the <h1> element with a font size of 30 pixels, font weight, bottom margin, and white color.
+
+*p{
+    color: #ffffff;
+}
+*Sets the color of <p> elements to white.
+*input[type="text"] {
+    font-family: 'Poppins', Arial, sans-serif;
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #032b34;
+    border-radius: 24px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+*Styles text input fields, setting width, padding, border, border radius, font size, margin, text color, and background color.
+
+*button {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #1db512;
+    color: #000000;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+*Styles buttons with a background color, text color, border radius, padding, font size, and cursor pointer.
+
+*button:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+*Defines button styles on hover, changing the background color to black and the text color to white.
+
+*#movieDetails {
+    margin-top: 20px;
+    margin: auto;
+    text-align: center;
+}
+
+*Styles the #movieDetails container, setting top margin, centering it horizontally, and aligning text to the center.
+
+*img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+*Styles images, setting maximum width, auto height, top margin, border radius, and box shadow.
+
+*h4{
+    color: #158631;
+}
+*Sets the color of <h4> elements to a specific shade of green.
+
+*.float-container {
+    border: 1px solid rgb(255, 255, 255);
+    margin: 1rem;
+    padding: 2rem 2rem;
+    text-align: center;
+}
+
+.float-child {
+    display: inline-block;
+    padding: 1rem 1rem;
+    vertical-align: middle;
+    text-align: left;
+}
+
+*Defines styles for containers and child elements within a floating layout, setting border, margin, padding, and text alignment.
+
+Javascript:
+
+Javascript Code:
+
+const apiKey = '76d079f0'; // Get an API key from http://www.omdbapi.com/apikey.aspx
+
+const movieInput = document.getElementById('movieInput');
+const searchButton = document.getElementById('searchButton');
+const movieDetails = document.getElementById('movieDetails');
+
+searchButton.addEventListener('click', () => {
+    const movieName = movieInput.value.trim();
+
+    if (movieName !== '') {
+        fetch(`http://www.omdbapi.com/?t=${movieName}&apikey=${apiKey}`)
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.Response === 'True') {
+                    // Display movie details
+                    movieDetails.innerHTML = `
+                        <div class = "float-container">
+                          <div class= "float-child">
+                            <img src="${data.Poster}" alt="${data.Title} poster">
+                          </div>
+                          <div class= "float-child">
+                            <h2>${data.Title}</h2>
+                            <h4 style="display: inline">Year:</h4> <p style="display: inline">${data.Year} </p><br>
+                            <h4 style="display: inline">Director:</h4> <p style="display: inline">${data.Director} </p><br>
+                            <h4 style="display: inline">Genre:</h4> <p style="display: inline">${data.Genre} </p><br>
+                            <h4 style="display: inline">Actors:</h4> <p style="display: inline">${data.Actors} </p><br>
+                            <h4 style="display: inline">PLot:</h4> <p style="display: inline">${data.Plot} </p><br>
+                          </div>
+                        </div>
+                        
+                        
+                       
+                    `;
+                } else {
+                    movieDetails.innerHTML = 'Movie not found.';
+                }
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+                movieDetails.innerHTML = 'An error occurred while fetching data.';
+            });
+    }
+});
+
+JavaScript Description:
+
+This JavaScript code is responsible for fetching movie details from the OMDB API based on user input and displaying them on the webpage. Here's a breakdown of its functionality:
+
+1)API Key Setup:
+const apiKey = '76d079f0'; // Get an API key from http://www.omdbapi.com/apikey.aspx
+
+*Declares a constant apiKey containing the API key required for accessing the OMDB API.
+
+2)DOM Element Selection:
+
+const movieInput = document.getElementById('movieInput');
+const searchButton = document.getElementById('searchButton');
+const movieDetails = document.getElementById('movieDetails');
+
+*Selects DOM elements corresponding to the movie input field, search button, and container for displaying movie details.
+
+3)Event Listener for Search Button:
+
+searchButton.addEventListener('click', () => {
+    // Code executed when the search button is clicked
+});
+
+*Adds an event listener to the search button, triggering a function when clicked.
+
+4)Fetching Movie Details:
+const movieName = movieInput.value.trim();
+
+*Retrieves the movie name entered by the user and trims any leading or trailing spaces.
+
+*fetch(`http://www.omdbapi.com/?t=${movieName}&apikey=${apiKey}`)
+
+*Uses the fetch API to make a GET request to the OMDB API, passing the movie name and API key as query parameters.
+
+5)Handling API Response:
+.then((response) => response.json())
+
+*Converts the response from the API to JSON format.
+
+*.then((data) => {
+    // Code executed when data is received from the API
+})
+
+*Handles the JSON data returned by the API.
+
+6)Displaying Movie Details:
+movieDetails.innerHTML = `
+    <!-- HTML template to display movie details -->
+`;
+
+*Updates the content of the movieDetails container with HTML markup containing movie details such as title, poster, year, director, genre, actors, and plot.
+
+7)Error Handling:
+.catch((error) => {
+    console.error('Error fetching data:', error);
+    movieDetails.innerHTML = 'An error occurred while fetching data.';
+});
+
+*Catches any errors that occur during the fetch operation and displays an error message in the movieDetails container.
+
+This JavaScript code integrates with the HTML structure to provide a dynamic movie details lookup feature on the webpage. When users enter a movie name and click the search button, the application fetches data from the OMDB API and updates the page with the retrieved movie details or displays an error message if the movie is not found or an error occurs during the fetch operation.
